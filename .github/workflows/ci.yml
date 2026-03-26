@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-repository:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Repository Structure
+        run: |
+          ls -R
+          test -f README.md
+          test -f SECURITY.md
+          test -f .github/CODEOWNERS
+          test -f .github/settings.yml
+          test -d backend
+          test -d frontend
+          test -d shared
+          test -f backend/.gitkeep
+          test -f frontend/.gitkeep
+          test -f shared/.gitkeep
