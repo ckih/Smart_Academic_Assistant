@@ -15,6 +15,21 @@ yarn-debug.log*
 yarn-error.log*
 
 # Secrets & Config
+# Next.js
+.next/
+out/
+build/
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -22,6 +37,11 @@ yarn-error.log*
 *.pem
 
 # IDEs
+
+# Vercel
+.vercel
+
+# IDE
 .vscode/
 .idea/
 .DS_Store

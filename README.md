@@ -67,3 +67,45 @@ To ensure code quality and stability, the following rules are enforced for the `
 - The CI workflow is defined in `.github/workflows/ci.yml`.
 - Code ownership is defined in `.github/CODEOWNERS`.
 - Repository settings and branch protection are defined in `.github/settings.yml`.
+# Smart_Academic_Assistant
+
+## Repository Structure
+
+```
+saa/
+├── backend/
+│   ├── api/                    # Vercel serverless entry points
+│   │   └── index.py
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── config.py
+│   │   ├── database.py
+│   │   ├── middleware/         # Security middleware
+│   │   │   ├── rate_limit.py
+│   │   │   ├── csrf.py
+│   │   │   ├── sanitizer.py
+│   │   │   └── origin_check.py
+│   │   ├── models/
+│   │   ├── schemas/
+│   │   ├── routers/
+│   │   ├── services/
+│   │   └── utils/
+│   └── tests/
+├── frontend/
+│   ├── src/
+│   │   ├── app/                # Next.js App Router
+│   │   ├── components/
+│   │   │   └── ui/             # shadcn/ui + custom components
+│   │   │       ├── spotlight-card.tsx
+│   │   │       ├── star-button.tsx
+│   │   │       ├── background-components.tsx
+│   │   ├── lib/
+│   │   │   ├── utils.ts
+│   │   │   ├── api.ts
+│   │   │   └── csrf.ts
+│   │   └── styles/
+│   │       └── globals.css     # Tailwind 4 + star-btn animation
+├── .github/workflows/
+├── vercel.json
+└── README.md
+```
